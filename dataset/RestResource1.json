@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "/crm/v3/objects/contacts?limit=100"
+			"relativeUrl": "/crm/objects/v3/contact"
 		},
 		"schema": []
 	}
