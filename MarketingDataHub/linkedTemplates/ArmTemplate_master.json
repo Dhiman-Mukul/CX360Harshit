@@ -7,9 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "MarketingDataHub"
 		},
-		"Hubspot_properties_typeProperties_url": {
+		"Is_Hubspot_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://api.hubapi.com/crm/v3/objects/contacts?limit=100"
+			"defaultValue": "https://api.hubapi.com"
 		},
 		"containerUri": {
 			"type": "string",
@@ -38,8 +38,8 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"Hubspot_properties_typeProperties_url": {
-						"value": "[parameters('Hubspot_properties_typeProperties_url')]"
+					"Is_Hubspot_properties_typeProperties_url": {
+						"value": "[parameters('Is_Hubspot_properties_typeProperties_url')]"
 					}
 				}
 			},

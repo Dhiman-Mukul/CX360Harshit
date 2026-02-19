@@ -5,8 +5,8 @@
 		"factoryName": {
 			"value": "MarketingDataHub"
 		},
-		"Hubspot_properties_typeProperties_url": {
-			"value": "https://api.hubapi.com/crm/v3/objects/contacts?limit=100"
+		"Is_Hubspot_properties_typeProperties_url": {
+			"value": "https://api.hubapi.com"
 		}
 	}
 }

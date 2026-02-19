@@ -7,9 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "MarketingDataHub"
 		},
-		"Hubspot_properties_typeProperties_url": {
+		"Is_Hubspot_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://api.hubapi.com/crm/v3/objects/contacts?limit=100"
+			"defaultValue": "https://api.hubapi.com"
 		}
 	},
 	"variables": {
@@ -17,39 +17,19 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Hubspot')]",
+			"name": "[concat(parameters('factoryName'), '/Is_Hubspot')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "RestService",
 				"typeProperties": {
-					"url": "[parameters('Hubspot_properties_typeProperties_url')]",
+					"url": "[parameters('Is_Hubspot_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestResource1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Hubspot",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "RestResource",
-				"typeProperties": {
-					"relativeUrl": "crm/v3/objects/contacts?limit=100"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Hubspot')]"
-			]
 		}
 	]
 }
